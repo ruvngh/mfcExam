@@ -1,0 +1,3 @@
+﻿  gPrjDlg.cpp
+gPrjDlg.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
+  gPrj.vcxproj -> C:\Users\ruvng\source\repos\gSolution\x64\Debug\gPrj.exe
