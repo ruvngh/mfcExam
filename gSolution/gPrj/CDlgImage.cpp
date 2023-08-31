@@ -13,7 +13,7 @@ IMPLEMENT_DYNAMIC(CDlgImage, CDialogEx)
 
 CDlgImage::CDlgImage(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_CDlgImage, pParent),
-	m_raidus(0)
+	circleR(33)
 {
 	m_pParent = pParent;
 }
@@ -24,12 +24,12 @@ CDlgImage::~CDlgImage()
 
 void CDlgImage::SetRadius(int size)
 {
-	m_raidus = size;
+	circleR = size;
 }
 
 int CDlgImage::GetRadius()
 {
-	return m_raidus;
+	return circleR;
 }
 
 void CDlgImage::DoDataExchange(CDataExchange* pDX)
@@ -124,14 +124,14 @@ void CDlgImage::drawData(CDC* pDC)
 
 	for (int i = 0; i < m_nDataCount; i++) { // m_nDataCount
 		rect.SetRect(m_ptData[i], m_ptData[i]);
-		rect.InflateRect(m_raidus, m_raidus);
+		rect.InflateRect(circleR, circleR);
 		pDC->Ellipse(rect);
 
 		rect.SetRect(m_ptData[i], m_ptData[i]);
-		rect.InflateRect(1, m_raidus);
+		rect.InflateRect(1, circleR);
 		pDC->Ellipse(rect);
 		rect.SetRect(m_ptData[i], m_ptData[i]);
-		rect.InflateRect(m_raidus, 1);
+		rect.InflateRect(circleR, 1);
 		pDC->Ellipse(rect);
 	}
 	pDC->SelectObject(pOldPen);

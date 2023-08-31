@@ -1,8 +1,3 @@
-﻿  pch.cpp
-  CDlgImage.cpp
-  CProcess.cpp
-  gPrj.cpp
-  gPrjDlg.cpp
-  코드를 생성하고 있습니다...
+﻿  gPrjDlg.cpp
 gPrjDlg.obj : warning LNK4258: '/entry:WinMainCRTStartup' 지시문은 '/ENTRY:wWinMainCRTStartup' 스위치와 호환되지 않습니다. 무시됩니다.
-  gPrj.vcxproj -> C:\Users\ruvng\OneDrive\바탕 화면\gSolution_re\x64\Debug\gPrj.exe
+  gPrj.vcxproj -> C:\Users\ruvng\OneDrive\바탕 화면\gSolution\x64\Debug\gPrj.exe

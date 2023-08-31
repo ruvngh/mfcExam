@@ -61,7 +61,7 @@ END_MESSAGE_MAP()
 
 CgPrjDlg::CgPrjDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_GPRJ_DIALOG, pParent)
-	, circleNum(0)
+	, circleNum(33)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }

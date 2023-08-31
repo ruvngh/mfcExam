@@ -22,7 +22,7 @@ public:
 	int GetRadius();
 
 private:
-	int m_raidus;
+	int circleR;
 
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
