@@ -249,7 +249,6 @@ void CgPrjDlg::OnBnClickedTest()
 			if (fm[j * nPitch + i] > nTh) {
 				if (m_pDlgImgResult->m_nDataCount < nTest)				// Max_POINT 대체
 				{
-					// cout << nIndex << ":" << i << "," << j << endl;
 					m_pDlgImgResult->m_ptData[nIndex].x = i;
 					m_pDlgImgResult->m_ptData[nIndex].y = j;
 					m_pDlgImgResult->m_nDataCount = ++nIndex;
