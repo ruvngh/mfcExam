@@ -18,6 +18,12 @@ public:
 	int m_nDataCount = 0;
 	CPoint m_ptData[MAX_POINT];
 
+	void SetRadius(int size);
+	int GetRadius();
+
+private:
+	int m_raidus;
+
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_CDlgImage };

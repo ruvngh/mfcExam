@@ -128,7 +128,7 @@ BOOL CgPrjDlg::OnInitDialog()
 	m_pDlgImgResult = new CDlgImage;
 	m_pDlgImgResult->Create(IDD_CDlgImage, this);
 	m_pDlgImgResult->ShowWindow(SW_SHOW);
-	m_pDlgImgResult->MoveWindow(640, 0, 640, 480);
+	m_pDlgImgResult->MoveWindow(640, 0, 0, 0);
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -232,18 +232,16 @@ void CgPrjDlg::OnBnClickedTest()
 	memset(fm2, 0, 640 * 480);
 
 
-
-
 	int nTest = GetDlgItemInt(IDC_EDIT1);
+	m_pDlgImage->SetRadius(GetDlgItemInt(IDC_EDIT1));
+	
+	int x = rand() % nWidth;
+	int y = rand() % nHeight;
+	// fm[y * nPitch + x] = (rand()%250) +1;
+	fm[y * nPitch + x] = 255;
+	
 
-	for (int k = 0; k < nTest; k++) {									// Max_POINT 대체
-		int x = rand() % nWidth;
-		int y = rand() % nHeight;
-		// fm[y * nPitch + x] = (rand()%250) +1;
-		fm[y * nPitch + x] = 255;
-	}
-
-	int nSum = 0;
+	
 	int nIndex = 0;
 	int nTh = 100;
 	for (int j = 0; j < nHeight; j++) {
@@ -255,6 +253,25 @@ void CgPrjDlg::OnBnClickedTest()
 					m_pDlgImgResult->m_ptData[nIndex].x = i;
 					m_pDlgImgResult->m_ptData[nIndex].y = j;
 					m_pDlgImgResult->m_nDataCount = ++nIndex;
+				}
+				//cout << nSum << "\t" << i << "," << j << endl;
+				//nSum++;
+			}
+		}
+	}
+
+	nIndex = 0;
+	m_pDlgImage->m_nDataCount = 0;
+	
+	for (int j = 0; j < nHeight; j++) {
+		for (int i = 0; i < nWidth; i++) {
+			if (fm[j * nPitch + i] > nTh) {
+				if (m_pDlgImage->m_nDataCount == 0)				
+				{
+					cout  << "x :" << i << "\ty :" << j << endl;
+					m_pDlgImage->m_ptData[nIndex].x = i;
+					m_pDlgImage->m_ptData[nIndex].y = j;
+					m_pDlgImage->m_nDataCount++;
 				}
 				//cout << nSum << "\t" << i << "," << j << endl;
 				//nSum++;
